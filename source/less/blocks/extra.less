@@ -3,13 +3,27 @@
 }
 
 .extra__title {
-  font-family: Oswald;
+  position: relative;
+  font-family: "Oswald", "Arial", sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 24px;
   margin: 0;
   padding: 0;
   margin-bottom: 49px;
+  background-color: #ffffff;
+  width: 245px;
+}
+
+.extra__title::before {
+  position: absolute;
+  content: "";
+  background-color: #68b738;
+  width: 100vw;
+  height: 2px;
+  left: 50%;
+  top: 15px;
+  z-index: -1;
 }
 
 .extra__list {
@@ -19,11 +33,21 @@
 }
 
 .extra__item {
+  position: relative;
   margin-bottom: 31px;
 }
 
+.extra__item::before {
+  position: absolute;
+  content: "";
+  background-color: #ebebeb;
+  width: 280px;
+  height: 1px;
+  top: -14px;
+}
+
 .extra__name {
-  font-family: Oswald;
+  font-family: "Oswald", "Arial", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 16px;
@@ -40,7 +64,7 @@
 }
 
 .extra__amount {
-  font-family: Lato;
+  font-family: "Lato", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 14px;
@@ -49,7 +73,7 @@
 }
 
 .extra__price {
-  font-family: Lato;
+  font-family: "Lato", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 14px;
@@ -58,19 +82,39 @@
 }
 
 .extra__button {
+  position: relative;
   display: block;
   text-decoration: none;
-  font-family: Oswald;
+  font-family: "Oswald", "Arial", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
   text-align: center;
-  color: #FFFFFF;
-  padding: 10px 0px 10px 0px;
-  background: #68B738;
+  color: #ffffff;
+  padding: 10px 0 10px 0;
+  background: #68b738;
   width: 280px;
   margin: 0 auto;
   text-transform: uppercase;
+}
+
+.extra__button::before {
+  position: absolute;
+  content: "";
+  background-color: #ebebeb;
+  width: 280px;
+  height: 1px;
+  bottom: -18px;
+  left: 0;
+}
+
+.extra__button:hover {
+  background-color: #5eaa2f;
+}
+
+.extra__button:active {
+  background-color: #5eaa2f;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .extra__item:last-child {
@@ -81,7 +125,7 @@
   position: relative;
   width: 280px;
   min-height: 290px;
-  background-image: url(../img/extra-gift-mobile.jpg);
+  background-image: url("../img/extra-gift-mobile.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   z-index: -2;
@@ -92,43 +136,58 @@
   content: "";
   width: 280px;
   min-height: 290px;
-  background: #68B738D9;
+  background: #68b738d9;
   opacity: 85%;
   z-index: -1;
 }
 
 .extra__image {
-  display: block;
-  margin: 0 auto;
-  padding: 0;
+  position: absolute;
+  left: 100px;
+  top: 60px;
 }
 
 .extra__description {
-  margin: 0 auto;
-  padding: 0;
-  font-family: Lato;
+  position: absolute;
+  right: 60px;
+  top: 172px;
+  font-family: "Lato", "Arial", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   width: 161px;
 }
 
 @media (min-width: @tabletop-width) {
-
   .extra__wrapper {
     margin: 0 30px 75px 30px;
+    position: relative;
   }
 
   .extra__title {
-    font-family: Oswald;
+    position: static;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 36px;
     font-weight: 400;
     line-height: 36px;
     margin: 0;
     padding: 0;
     margin-bottom: 108px;
+    padding-left: 40px;
+    width: 418px;
+  }
+
+  .extra__title::before {
+    position: absolute;
+    content: "";
+    background-color: #68b738;
+    width: 100vw;
+    height: 2px;
+    left: calc((100vw - 100%) / -2);
+    top: 22px;
+    z-index: -1;
   }
 
   .extra__table {
@@ -137,25 +196,41 @@
 
   .extra__list {
     list-style-type: none;
-    margin: 0;
     padding: 0;
-    width: 708px;
+    width: 632px;
+    margin: 0 auto;
+    margin-bottom: 100px;
   }
 
   .extra__item {
     display: block;
     width: 632px;
     min-height: 85px;
-    margin-bottom: 40px;
+    margin: 28px 0 53px;
+  }
+
+  .extra__item::before {
+    width: 707px;
+    min-height: 138px;
+    outline: 1px solid #cdcdcd;
+    background-color: #ffffff;
+    z-index: -1;
+    margin-left: -38px;
+    margin-top: -12px;
+  }
+
+  .extra__item:last-child {
+    margin-bottom: 0;
   }
 
   .extra__total {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 25px;
   }
 
   .extra__name {
-    font-family: Oswald;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 20px;
@@ -164,8 +239,12 @@
     padding: 0;
   }
 
+  .extra__card {
+    margin: 0;
+  }
+
   .extra__amount {
-    font-family: Lato;
+    font-family: "Lato", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
@@ -175,7 +254,7 @@
   }
 
   .extra__price {
-    font-family: Lato;
+    font-family: "Lato", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
@@ -184,33 +263,39 @@
   }
 
   .extra__button {
+    position: static;
     width: 632px;
     height: 40px;
-    top: 15px;
-    left: 651px;
-    padding: 10px 0px 10px 0px;
-    gap: 0px;
-    opacity: 0px;
+    padding: 10px 0 10px 0;
     text-decoration: none;
-    background: #68B738;
-    font-family: Oswald;
+    background: #68b738;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
     text-transform: uppercase;
   }
 
-  .extra__item:last-child {
-    margin-bottom: 0;
+  .extra__button::before {
+    display: none;
+  }
+
+  .extra__button:hover {
+    background-color: #5eaa2f;
+  }
+
+  .extra__button:active {
+    background-color: #5eaa2f;
+    color: rgba(255, 255, 255, 0.3);
   }
 
   .extra__gift {
     position: relative;
     width: 707px;
     min-height: 200px;
-    background-image: url(../img/extra-gift-tablet.jpg);
+    background-image: url("../img/extra-gift-tablet.jpg");
     background-size: contain;
     background-repeat: no-repeat;
     margin: 0;
@@ -222,46 +307,48 @@
     content: "";
     width: 707px;
     min-height: 200px;
-    background: #68B738D9;
+    background: #68b738d9;
     opacity: 85%;
     z-index: -1;
   }
 
   .extra__image {
-    display: block;
-    margin: 0 auto;
-    padding: 0;
-    margin-top: 56px;
-    margin-bottom: 46px;
+    position: absolute;
+    left: 78px;
+    top: 56px;
   }
 
   .extra__description {
     margin: 0 auto;
     padding: 0;
-    font-family: Lato;
+    font-family: "Lato", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
-    text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
     width: 161px;
+    position: absolute;
+    right: 124px;
+    top: 70px;
+    text-align: start;
   }
 }
 
 @media (min-width: @desktop-width) {
-
   .extra__wrapper {
     margin: 0 110px 87px 110px;
   }
 
   .extra__title {
-    font-family: Oswald;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 36px;
     font-weight: 400;
     line-height: 36px;
     margin: 0;
     padding: 0;
     margin-bottom: 80px;
+    padding-left: 40px;
+    margin-left: -40px;
   }
 
   .extra__table {
@@ -279,7 +366,17 @@
     display: grid;
     grid-template-columns: 651px 245px;
     min-height: 40px;
-    margin-bottom: 40px;
+    margin: 27px 0;
+  }
+
+  .extra__item::before {
+    width: 895px;
+    min-height: 1px;
+    margin: 0;
+    background-color: #cdcdcd;
+    z-index: -1;
+    top: -30px;
+    outline: none;
   }
 
   .extra__total {
@@ -287,7 +384,7 @@
   }
 
   .extra__name {
-    font-family: Oswald;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 20px;
@@ -297,8 +394,12 @@
     width: 325px;
   }
 
+  .extra__card {
+    align-items: center;
+  }
+
   .extra__amount {
-    font-family: Lato;
+    font-family: "Lato", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
@@ -308,7 +409,7 @@
   }
 
   .extra__price {
-    font-family: Lato;
+    font-family: "Lato", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
@@ -318,22 +419,31 @@
   }
 
   .extra__button {
+    position: relative;
     width: 244px;
     height: 40px;
-    top: 15px;
-    left: 651px;
-    padding: 10px 0px 10px 0px;
-    gap: 0px;
-    opacity: 0px;
+    padding: 10px 0 10px 0;
     text-decoration: none;
-    background: #68B738;
-    font-family: Oswald;
+    background: #68b738;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
     text-transform: uppercase;
+    margin-top: -9px;
+  }
+
+  .extra__button::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 895px;
+    height: 1px;
+    background-color: #cdcdcd;
+    bottom: -12px;
+    left: -650px;
   }
 
   .extra__item:last-child {
@@ -344,7 +454,7 @@
     position: relative;
     width: 245px;
     min-height: 288px;
-    background-image: url(../img/extra-gift-desktop.jpg);
+    background-image: url("../img/extra-gift-desktop.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     margin-left: 80px;
@@ -355,29 +465,30 @@
     position: absolute;
     content: "";
     width: 245px;
-    min-height: 295px;
-    background: #68B738D9;
+    min-height: 288px;
+    background: #68b738d9;
     opacity: 85%;
     z-index: -1;
   }
 
   .extra__image {
-    display: block;
-    margin: 0 auto;
-    padding: 0;
-    margin-top: 56px;
-    margin-bottom: 46px;
+    position: absolute;
+    left: 84px;
+    top: 56px;
   }
 
   .extra__description {
+    position: absolute;
+    right: 40px;
+    top: 186px;
     margin: 0 auto;
     padding: 0;
-    font-family: Lato;
+    font-family: "Lato", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
     width: 161px;
   }
 }

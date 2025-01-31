@@ -1,60 +1,97 @@
 .comment__wrapper {
-  margin: 0 20px 23px 20px;
+  margin: 0 20px 18px 20px;
 }
 
 .comment__title {
-  font-family: Oswald;
+  position: relative;
+  font-family: "Oswald", "Arial", sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 26px;
+  background-color: #ffffff;
+  width: 140px;
+  display: block;
+}
+
+.comment__title::before {
+  position: absolute;
+  content: "";
+  width: 100vw;
+  height: 2px;
+  background-color: #68b738;
+  left: 50%;
+  top: 16px;
+  z-index: -1;
 }
 
 .comment__message {
   width: 280px;
   height: 150px;
+  margin: 0;
+  border: 1px solid #e7e7e7;
   resize: none;
-  font-family: Oswald;
+  font-family: "Oswald", "Arial", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 18px;
   color: #444444;
+  margin-top: 36px;
+  padding: 14px;
+  text-transform: uppercase;
+
+  &:hover {
+    outline: 2px solid #cdcdcd;
+  }
+
+  &:focus {
+    outline: 2px solid #444444;
+  }
 }
 
 @media (min-width: @tabletop-width) {
-
   .comment__wrapper {
-    margin: 0 30px 65px 30px;
+    position: relative;
+    margin: 0 30px 62px 30px;
   }
 
   .comment__title {
-    font-family: Oswald;
+    position: static;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 36px;
     font-weight: 400;
     line-height: 36px;
-    margin-bottom: 87px;
+    width: 262px;
+    padding-left: 40px;
+  }
+
+  .comment__title::before {
+    top: 22px;
+    left: calc((100vw - 100%) / -2);
   }
 
   .comment__message {
     width: 628px;
     height: 175px;
+    margin-top: 88px;
+    margin-left: 40px;
+    padding: 11px 20px;
     resize: none;
-    font-family: Oswald;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 30px;
     color: #444444;
   }
-
 }
 
 @media (min-width: @desktop-width) {
-
   .comment__wrapper {
-    margin: 0 110px 70px 110px;
+    margin: 0 110px 65px 70px;
   }
 
   .comment__title {
-    font-family: Oswald;
+    display: block;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 36px;
     font-weight: 400;
     line-height: 36px;
@@ -64,11 +101,13 @@
     width: 1220px;
     height: 175px;
     resize: none;
-    font-family: Oswald;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 30px;
     color: #444444;
+    text-transform: uppercase;
+    padding: 9px 20px;
+    margin-top: 78px;
   }
-
 }

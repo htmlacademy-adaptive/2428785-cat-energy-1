@@ -1,9 +1,23 @@
 .product {
-  margin-bottom: 45px;
+  position: relative;
+  width: 320px;
+  min-height: 209px;
+  margin: 0;
+}
+
+.product::before {
+  position: absolute;
+  content: "";
+  background-color: #ebebeb;
+  width: 100vw;
+  height: 1px;
+  left: calc((100vw - 100%) / -2);
+  top: -22px;
 }
 
 .product__card {
   display: flex;
+  margin-bottom: 20px;
 }
 
 .product__link {
@@ -13,20 +27,38 @@
 
 .product__image {
   display: block;
-  margin: 0 auto;
+  margin: 2px auto 0;
+}
+
+.product__image-small {
+  display: block;
+  margin: 12px auto 0;
+}
+
+.product__name-small {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #222222;
+  width: 76px;
+  margin-bottom: 15px;
 }
 
 .product__name {
   display: flex;
   margin: 0;
   padding: 0;
-  font-family: Oswald;
+  font-family: "Oswald", "Arial", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
   text-transform: uppercase;
   color: #222222;
-  text-align: center;
   width: 76px;
   margin-bottom: 14px;
 }
@@ -44,14 +76,14 @@
 }
 
 .product__category {
-  font-family: Lato;
+  font-family: "Lato", "Arial", sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
 }
 
 .product__value {
-  font-family: Lato;
+  font-family: "Lato", "Arial", sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
@@ -60,69 +92,125 @@
 .product__button {
   display: block;
   text-decoration: none;
-  font-family: Oswald;
+  font-family: "Oswald", "Arial", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
   text-align: center;
-  color: #FFFFFF;
-  padding: 10px 0px 10px 0px;
-  background: #68B738;
+  color: #ffffff;
+  padding: 10px 0 10px 0;
+  background: #68b738;
   width: 280px;
   margin: 0 auto;
   text-transform: uppercase;
 }
 
+.product__button:hover {
+  background-color: #5eaa2f;
+}
+
+.product__button:active {
+  background-color: #5eaa2f;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.product-more {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  width: 280px;
+}
+
+.product-more::before {
+  position: absolute;
+  content: "";
+  background-color: #ebebeb;
+  width: 100vw;
+  height: 1px;
+  left: calc((100vw - 100%) / -2);
+  top: -22px;
+}
+
 .product-more__image {
-  margin: 0;
-  padding: 0;
-  margin-bottom: 23px;
+  position: absolute;
+  left: 125px;
+  top: 4px;
 }
 
 .product-more__name {
-  display: flex;
+  display: block;
   margin: 0 auto;
   padding: 0;
-  font-family: Oswald;
+  font-family: "Oswald", "Arial", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
   text-transform: uppercase;
   color: #222222;
   text-align: center;
-  width: 204px;
   margin-bottom: 8px;
+  margin-top: 58px;
 }
 
 .product-more__show {
-  font-family: Lato;
+  font-family: "Lato", "Arial", sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   text-align: center;
-  margin: 0 51px 21px 51px;
+  margin: 0;
+  margin-bottom: 20px;
+  width: 280px;
 }
 
 .product-more__button {
   display: block;
   text-decoration: none;
-  font-family: Oswald;
+  font-family: "Oswald", "Arial", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
   text-align: center;
   color: #444444;
-  padding: 10px 0px 10px 0px;
-  background: #F2F2F2;
+  padding: 10px 0 10px 0;
+  background: #f2f2f2;
   width: 280px;
   margin: 0 auto;
   text-transform: uppercase;
 }
 
-@media (min-width: @tabletop-width) {
+.product-more__button::before {
+  position: absolute;
+  content: "";
+  background-color: #ebebeb;
+  width: 100vw;
+  height: 1px;
+  left: calc((100vw - 100%) / -2);
+  bottom: -25px;
+}
 
+.product-more__button:hover {
+  background-color: #ebebeb;
+}
+
+.product-more__button:active {
+  background-color: #ebebeb;
+  color: rgba(68, 68, 68, 1);
+}
+
+@media (min-width: @tabletop-width) {
   .product {
     margin-bottom: 0;
+  }
+
+  .product::before {
+    position: absolute;
+    content: "";
+    background-color: #ebebeb;
+    width: 324px;
+    height: 1px;
+    left: 0;
+    top: 82px;
   }
 
   .product__card {
@@ -135,48 +223,71 @@
 
   .product__image {
     display: block;
-    margin: 0 auto;
+    margin: 15px auto 28px;
+  }
+
+  .product__image-small {
+    margin: 30px auto 40px;
   }
 
   .product__name {
-    display: flex;
     margin: 0 auto;
+    margin-bottom: 8px;
     padding: 0;
-    font-family: Oswald;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
     text-transform: uppercase;
     color: #222222;
     text-align: center;
-    width: 140px;
-    margin-bottom: 23px;
-    margin-top: 19px;
+    width: 135px;
+  }
+
+  .product__name-small {
+    width: 135px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+    font-family: "Oswald", "Arial", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
   }
 
   .product__description {
     list-style-type: none;
-    margin: 0;
     padding: 0;
     margin: 0 auto;
-    width: 169px;
+    width: 250px;
     margin-bottom: 37px;
   }
 
   .product__item {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 12px;
   }
 
   .product__category {
-    font-family: Lato;
+    position: relative;
+    font-family: "Lato", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
   }
 
+  .product__category::before {
+    position: absolute;
+    content: "";
+    background-color: #cdcdcd;
+    width: 250px;
+    height: 1px;
+    bottom: -6px;
+  }
+
   .product__value {
-    font-family: Lato;
+    font-family: "Lato", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
@@ -185,71 +296,80 @@
   .product__button {
     display: block;
     text-decoration: none;
-    font-family: Oswald;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
     text-align: center;
-    color: #FFFFFF;
-    padding: 10px 0px 10px 0px;
-    background: #68B738;
+    color: #ffffff;
+    padding: 10px 0 10px 0;
+    background: #68b738;
     width: 250px;
     margin: 0 auto;
     text-transform: uppercase;
   }
 
+  .product-more {
+    width: 324px;
+  }
+
   .product-more__image {
-    display: block;
-    padding: 0;
-    margin: 50px auto;
+    left: 132px;
+    top: 132px;
   }
 
   .product-more__name {
     display: flex;
-    margin: 0 auto;
+    margin: 244px auto 22px;
     padding: 0;
-    font-family: Oswald;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
     text-transform: uppercase;
     color: #222222;
     text-align: center;
-    width: 140px;
-    margin-bottom: 26px;
+    width: 134px;
   }
 
   .product-more__show {
-    font-family: Lato;
+    font-family: "Lato", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 18px;
     text-align: center;
-    margin: 0 38px 43px 38px;
+    margin: 0 auto 82px;
+    width: 170px;
   }
 
   .product-more__button {
     display: block;
     text-decoration: none;
-    font-family: Oswald;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
     text-align: center;
     color: #444444;
-    padding: 10px 0px 10px 0px;
-    background: #F2F2F2;
+    padding: 10px 0 10px 0;
+    background: #f2f2f2;
     width: 169px;
+    height: 40px;
     margin: 0 auto;
     text-transform: uppercase;
   }
-
 }
 
 @media (min-width: @desktop-width) {
-
   .product {
+    width: 245px;
     margin-bottom: 0;
+  }
+
+  .product::before {
+    width: 245px;
+    top: 64px;
+    min-height: 430px;
   }
 
   .product__card {
@@ -257,7 +377,10 @@
   }
 
   .product__link {
+    display: block;
     text-decoration: none;
+    width: 169px;
+    margin: 0 auto;
   }
 
   .product__image {
@@ -265,11 +388,15 @@
     margin: 0 auto;
   }
 
+  .product__image-small {
+    margin: 14px auto 0;
+  }
+
   .product__name {
     display: flex;
     margin: 0 auto;
     padding: 0;
-    font-family: Oswald;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
@@ -278,36 +405,55 @@
     text-align: center;
     width: 140px;
     margin-bottom: 23px;
-    margin-top: 19px;
+    margin-top: 18px;
+  }
+
+  .product__name-small {
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    font-family: "Oswald", "Arial", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #222222;
+    text-align: center;
+    width: 140px;
+    margin-bottom: 23px;
+    margin-top: 32px;
   }
 
   .product__description {
     list-style-type: none;
-    margin: 0;
     padding: 0;
-    margin: 0 38px 43px 38px;
+    margin: 0 38px 44px 38px;
     width: 169px;
   }
 
   .product__item {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
-  .product__item:nth-child(3n) {
+  .product__item:first-child {
     margin-bottom: 0;
   }
 
   .product__category {
-    font-family: Lato;
+    font-family: "Lato", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
   }
 
+  .product__category::before {
+    width: 169px;
+  }
+
   .product__value {
-    font-family: Lato;
+    font-family: "Lato", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
@@ -316,29 +462,43 @@
   .product__button {
     display: block;
     text-decoration: none;
-    font-family: Oswald;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
     text-align: center;
-    color: #FFFFFF;
-    padding: 10px 0px 10px 0px;
-    background: #68B738;
+    color: #ffffff;
+    padding: 10px 0 10px 0;
+    background: #68b738;
     width: 169px;
     margin: 0 auto;
     text-transform: uppercase;
   }
 
+  .product__button:hover {
+    background-color: #5eaa2f;
+  }
+
+  .product__button:active {
+    background-color: #5eaa2f;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .product-more {
+    top: -15px;
+    width: 245px;
+  }
+
   .product-more__image {
-    padding: 0;
-    margin: 130px 93px 40px 93px;
+    left: 92px;
+    top: 128px;
   }
 
   .product-more__name {
     display: flex;
-    margin: 0 auto;
+    margin: 228px auto 26px;
     padding: 0;
-    font-family: Oswald;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
@@ -346,32 +506,39 @@
     color: #222222;
     text-align: center;
     width: 140px;
-    margin-bottom: 26px;
   }
 
   .product-more__show {
-    font-family: Lato;
+    font-family: "Lato", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 18px;
     text-align: center;
-    margin: 0 38px 43px 38px;
+    margin: 0 38px 90px 38px;
   }
 
   .product-more__button {
     display: block;
     text-decoration: none;
-    font-family: Oswald;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
     text-align: center;
     color: #444444;
-    padding: 10px 0px 10px 0px;
-    background: #F2F2F2;
+    padding: 10px 0 10px 0;
+    background: #f2f2f2;
     width: 169px;
     margin: 0 auto;
     text-transform: uppercase;
   }
 
+  .product-more__button:hover {
+    background-color: #ebebeb;
+  }
+
+  .product-more__button:active {
+    background-color: #ebebeb;
+    color: rgba(68, 68, 68, 1);
+  }
 }

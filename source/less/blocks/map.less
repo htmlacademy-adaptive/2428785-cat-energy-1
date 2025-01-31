@@ -3,65 +3,77 @@
   margin: 0;
 }
 
+.map__image {
+  position: absolute;
+  z-index: -1;
+}
+
 .map__contacts {
   display: flex;
   margin: 0;
-  padding: 0;
   width: 320px;
-  min-height: 122px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   flex-shrink: 0;
-  padding: 26px 20px;
+  padding: 25px 20px;
 }
 
 .map__invite {
   margin: 0;
   padding: 0;
-  font-family: Oswald;
+  font-family: "Oswald", "Arial", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
   text-transform: uppercase;
 }
+
 .map__address {
   margin: 0;
   padding: 0;
-  font-family: Lato;
+  font-family: "Lato", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
 }
+
 .map__city {
   margin: 0;
   padding: 0;
-  font-family: Lato;
+  font-family: "Lato", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
 }
 
 .map__iframe {
+  position: relative;
   display: block;
   border: none;
-  width: 320px;
+  left: calc((100vw - 100%) / -2);
+  top: 0;
   height: 362px;
+  width: 100vw;
 }
 
 @media (min-width: @tabletop-width) {
-
   .map__wrapper {
+    position: relative;
     padding: 0;
     margin: 0;
+  }
+
+  .map__image {
+    width: 768px;
+    height: 400px;
   }
 
   .map__contacts {
     display: flex;
     justify-content: space-between;
     margin: 0;
-    padding: 0;
     width: 768px;
     min-height: 200px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     flex-shrink: 0;
     padding: 60px 70px;
   }
@@ -69,7 +81,7 @@
   .map__invite {
     margin: 0;
     padding: 0;
-    font-family: Oswald;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 26px;
@@ -85,31 +97,35 @@
   .map__address {
     margin: 0;
     padding: 0;
-    font-family: Lato;
+    font-family: "Lato", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
+    margin-bottom: 16px;
   }
+
   .map__city {
     margin: 0;
     padding: 0;
-    font-family: Lato;
+    font-family: "Lato", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
   }
 
   .map__iframe {
+    position: relative;
     display: block;
     border: none;
-    width: 768px;
+    content: "";
+    left: calc((100vw - 100%) / -2);
+    top: 0;
     height: 400px;
+    width: 100vw;
   }
-
 }
 
 @media (min-width: @desktop-width) {
-
   .map__wrapper {
     display: flex;
     min-height: 400px;
@@ -117,13 +133,17 @@
     margin: 0;
   }
 
+  .map__image {
+    width: 1440px;
+    height: 400px;
+  }
+
   .map__contacts {
-    display: none;
-    margin: 0;
-    padding: 0;
+    position: absolute;
+    display: flex;
     width: 565px;
     min-height: 199px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     flex-shrink: 0;
     margin: 95px 0 106px 110px;
     padding: 60px 78px 60px 80px;
@@ -132,7 +152,7 @@
   .map__invite {
     margin: 0;
     padding: 0;
-    font-family: Oswald;
+    font-family: "Oswald", "Arial", sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 26px;
@@ -144,16 +164,17 @@
     &--address {
       margin: 0;
       padding: 0;
-      font-family: Lato;
+      font-family: "Lato", "Arial", sans-serif;
       font-size: 16px;
       font-weight: 400;
       line-height: 20px;
       margin-bottom: 19px;
     }
+
     &--city {
       margin: 0;
       padding: 0;
-      font-family: Lato;
+      font-family: "Lato", "Arial", sans-serif;
       font-size: 16px;
       font-weight: 400;
       line-height: 20px;
@@ -162,10 +183,8 @@
   }
 
   .map__iframe {
+    position: absolute;
     display: block;
     border: none;
-    width: 1440px;
-    height: 400px;
   }
-
 }
